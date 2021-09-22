@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+:root {
+  --background-color-dark-mode: rgb(51, 51, 51);
+  --background-color-light-mode: #7bdaf3;
+  --note-color-dark-mode: #b400d4;
+  --buttons-color-light-mode: #9ec862;
+  --buttons-color-dark-mode: #fff;
+  --buttons-add-hover-dark-mode: #d400c2;
+  --buttons-note-hover-dark-mode: rgb(195, 195, 195);
+  --note-background-color-dark-mode: #4d4d4d;
+  --note-background-color-light-mode: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #7bdaf3; */
+  background-color: rgb(51, 51, 51);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-top: 3rem;
+}
+
+.add {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+  /* background-color: #9ec862; */
+  /* background-color: #6e00d4; */
+  background-color: var(--note-color-dark-mode);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  /* padding: 1rem 1rem; */
+  cursor: pointer;
+}
+
+.add i {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.add:hover {
+  cursor: pointer;
+  background-color: var(--buttons-add-hover-dark-mode);
+}
+
+.note {
+  /* background-color: #fff; */
+  background-color: var(--note-background-color-dark-mode);
+  color: #fff;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  margin: 30px 20px;
+  height: 400px;
+  width: 400px;
+}
+
+.note .tools {
+  /* background-color: #9ec862; */
+  /* background-color: #6e00d4; */
+  background-color: var(--note-color-dark-mode);
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.note .tools button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.note .tools span {
+  font-size: 12px;
+  color: #fff;
+  display: none;
+}
+
+.note .tools span.active {
+    display: block;
+}
+
+.note .tools button:hover {
+  color: var(--buttons-note-hover-dark-mode);
+  cursor: pointer;
+}
+
+.note textarea {
+  background-color: var(--note-background-color-dark-mode);
+  color: #fff;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* TOAST STYLING */
+
+#toasts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.toast {
+  background-color: #fff;
+  color: rebeccapurple;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  transition: transform 1.5s 0s, opacity 1.25s 0s;
+}
+
+.toast.remove {
+  transform: translateX(100vw);
+  opacity: 0;
+}
+
+.toast.info {
+  color: rebeccapurple;
+}
+
+.toast.success {
+  color: green;
+}
+
+.toast.error {
+  color: red;
+}
